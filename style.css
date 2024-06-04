@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --clr-primary1: hsl(179, 62%, 43%);
+  --clr-primary1-darker: hsl(181, 51%, 45%);
+  --clr-primary2: hsl(71, 73%, 54%);
+  --clr-neutral-200: hsl(204, 43%, 93%);
+  --clr-neutral-300: hsl(218, 22%, 67%);
+  --ff-default: "Karla", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-neutral-200);
+  font-family: var(--ff-default);
+  color: var(--clr-neutral-200);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "hero"
+    "sign-up"
+    "why-us";
+  margin: 3rem 1.75rem;
+}
+.section {
+  padding: 1.5rem;
+}
+.section:first-of-type {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.section:last-of-type {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.hero {
+  background-color: white;
+  grid-area: hero;
+}
+.sign-up {
+  background-color: var(--clr-primary1-darker);
+  grid-area: sign-up;
+}
+.why-us {
+  background-color: var(--clr-primary1);
+  grid-area: why-us;
+}
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.hero-title {
+  color: var(--clr-primary1);
+}
+.hero-subtitle {
+  color: var(--clr-primary2);
+  font-size: 0.925rem;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+.hero-description {
+  color: var(--clr-neutral-300);
+}
+.sign-up-price {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.sign-up-price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-neutral-300);
+}
+.sign-up-subtitle {
+  font-size: 0.925rem;
+  margin-bottom: 1.5rem;
+}
+.sign-up-button {
+  background-color: var(--clr-primary2);
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  box-shadow: rgba(101, 101, 187, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  cursor: pointer;
+}
+.attribution {
+  color: black;
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (min-width: 450px) {
+  .container {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "sign-up why-us";
+  }
+  .section {
+    padding: 2.5rem;
+  }
+  .sign-up {
+    border-bottom-left-radius: 0.5rem;
+  }
+  .section:last-of-type {
+    border-radius: 0 0 0.5rem 0;
+  }
+}
